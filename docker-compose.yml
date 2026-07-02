@@ -1,0 +1,15 @@
+version: "3.9"
+
+services:
+  flask-app:
+    build: .
+    container_name: flask-app
+    ports:
+      - "80:5000"
+    volumes:
+      - .:/app
+    environment:
+      PYTHONDONTWRITEBYTECODE: "1"
+      PYTHONUNBUFFERED: "1"
+
+    restart: unless-stopped
