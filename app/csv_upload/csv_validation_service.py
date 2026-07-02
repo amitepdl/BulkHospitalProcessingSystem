@@ -1,6 +1,14 @@
 import csv
 import io
 
+"""
+Service to validate the CSV file and it's column formats,
+the format of the csv file should be as it is defined in the sample csv file.
+
+It validates all the rows of the csv file, and attaches key <is_valid> to the hospital data
+ and return list of hospital data 
+"""
+
 
 class CSVValidationService:
 

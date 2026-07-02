@@ -1,6 +1,11 @@
 import logging
 from requests import request, Response
 
+"""
+hospital API Helper:
+helps in calling the api endpoints provided in the assignment docs
+"""
+
 
 logger = logging.getLogger(__name__)
 

@@ -1,3 +1,8 @@
+"""
+Entry point of the flask app
+"""
+
+
 from app import get_app
 
 app = get_app()

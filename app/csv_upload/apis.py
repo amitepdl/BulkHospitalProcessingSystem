@@ -1,3 +1,15 @@
+"""
+API definition of the hospitals/bulk endpoint,
+request format:
+{
+"file": <csv_file>,
+"batch_id": None | uuid
+}
+It Accepts the file and optional parameter batch_id,
+if batch_id is given, it'll try to link the hospitals written in the csv file with that particular batch
+"""
+
+
 from flask import Blueprint, request, jsonify
 from app.csv_upload.services import UploadService
 

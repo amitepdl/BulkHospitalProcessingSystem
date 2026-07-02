@@ -9,6 +9,33 @@ from app.csv_upload.persistent_data_service import PersistentDataService, AsyncH
 
 logger = logging.getLogger(__name__)
 
+"""
+Service Description:
+upload_csv_file function flow:
+
+Step 1: Validates the csv file
+
+STep 2: Using the PersistentDataService, 
+we'll check if that hospital record, with this particular batch id has been processed or not.
+If yes, swap the existing data details with the details present in the storage
+
+Step 3:
+Iterate through the validated hospitals, 
+if the hospital data is valid and if it has not been processed yet, 
+after that call the create hospital API,
+at each step track how many hospitals has been created,
+
+Step 4:
+If freshly created hospitals are more than 0, call the activate batch API
+
+Step 5:
+Prepare the API response, and set corresponding status etc
+
+Step 6:
+Call the sync_batch_and_hospitals to give the support of Resume Capability      
+
+"""
+
 
 class UploadService:
 

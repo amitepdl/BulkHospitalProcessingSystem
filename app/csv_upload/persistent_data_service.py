@@ -2,6 +2,14 @@ import base64
 import threading
 from flask import current_app
 
+"""
+Persistent data layer:
+1. For very processed hospital of a batch, it adds the hospital data in a dictionary for
+with key being combination of batch_id, name and address
+
+2. Additionally keeps a set of batch_ids processed so far for data consistency  
+"""
+
 
 class PersistentDataService:
 
